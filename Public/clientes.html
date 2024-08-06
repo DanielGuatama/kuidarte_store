@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuidarte Store - Clientes</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/clientes.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="img/logo.png" alt="Logo de Kuidarte Store" class="logo">
+            <h1>Gestión de Clientes</h1>
+        </div>
+        <div class="header-right">
+            <form id="logoutForm" action="/logout" method="POST">
+                <button type="submit" id="cerrarSesion">Cerrar Sesión</button>
+            </form>
+        </div>
+    </header>
+    <div class="main-container">
+        <section>
+            <h2>Lista de Clientes</h2>
+            <table id="clientesTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Cédula/NIT</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Ciudad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Agregar Cliente</h2>
+            <form id="addClienteForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="cedula_nit">Cédula/NIT:</label>
+                <input type="text" id="cedula_nit" name="cedula_nit" required>
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion">
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad">
+                <button type="submit">Agregar Cliente</button>
+            </form>
+        </section>
+    <!-- Formulario de edición de cliente -->
+    <section id="editSection" style="display:none;">
+        <h2>Editar Cliente</h2>
+        <form id="editClienteForm">
+            <input type="hidden" id="editIdCliente" name="id_cliente">
+            <label for="editNombre">Nombre:</label>
+            <input type="text" id="editNombre" name="nombre" required>
+            <label for="editCedulaNit">Cédula/NIT:</label>
+            <input type="text" id="editCedulaNit" name="cedula_nit" required>
+            <label for="editCorreo">Correo:</label>
+            <input type="email" id="editCorreo" name="correo" required>
+            <label for="editTelefono">Teléfono:</label>
+            <input type="text" id="editTelefono" name="telefono">
+            <label for="editDireccion">Dirección:</label>
+            <input type="text" id="editDireccion" name="direccion">
+            <label for="editCiudad">Ciudad:</label>
+            <input type="text" id="editCiudad" name="ciudad">
+            <button type="submit">Guardar Cambios</button>
+            <button type="button" id="cancelEdit">Cancelar</button>
+        </form>
+    </section>
+</div>
+<footer>
+    <p>&copy; 2024 Kuidarte Store. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
