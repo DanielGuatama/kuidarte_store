@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const path = require('path');
+
 //configurar las rutas CRUD 
 const session = require('express-session');
 
@@ -82,25 +83,32 @@ app.post('/clientes', (req, res) => {
     });
 });
 
-// Leer clientes
+// Leer cliente por Cédula/NIT
 app.get('/clientes', (req, res) => {
-    const query = 'SELECT * FROM clientes';
-    db.query(query, (err, results) => {
-        if (err) return res.status(500).send(err);
-        res.json(results);
-    });
+    const { cedula_nit } = req.query;
+    if (cedula_nit) {
+        const query = 'SELECT * FROM clientes WHERE cedula_nit = ?';
+        db.query(query, [cedula_nit], (err, results) => {
+            if (err) return res.status(500).send(err);
+            if (results.length === 0) return res.status(404).send('Cliente no encontrado');
+            res.json(results);
+        });
+    } else {
+        res.status(400).send('Debe proporcionar un ID o Cédula/NIT para buscar');
+    }
 });
 
 // Leer cliente por ID
 app.get('/clientes/:id', (req, res) => {
-    const { id } = req.params;
+    const id = req.params.id;
     const query = 'SELECT * FROM clientes WHERE id_cliente = ?';
-    db.query(query, [id], (err, results) => {
+    db.query(query, [id], (err, result) => {
         if (err) return res.status(500).send(err);
-        if (results.length === 0) return res.status(404).send('Cliente no encontrado');
-        res.json(results[0]);
+        if (result.length === 0) return res.status(404).send('Cliente no encontrado');
+        res.json(result[0]);
     });
 });
+
 
 // Actualizar cliente
 app.put('/clientes/:id', (req, res) => {
@@ -109,6 +117,7 @@ app.put('/clientes/:id', (req, res) => {
     const query = 'UPDATE clientes SET nombre = ?, cedula_nit = ?, correo = ?, telefono = ?, direccion = ?, ciudad = ? WHERE id_cliente = ?';
     db.query(query, [nombre, cedula_nit, correo, telefono, direccion, ciudad, id], (err, results) => {
         if (err) return res.status(500).send(err);
+        if (results.affectedRows === 0) return res.status(404).send('Cliente no encontrado');
         res.send('Cliente actualizado exitosamente');
     });
 });
@@ -119,6 +128,7 @@ app.delete('/clientes/:id', (req, res) => {
     const query = 'DELETE FROM clientes WHERE id_cliente = ?';
     db.query(query, [id], (err, results) => {
         if (err) return res.status(500).send(err);
+        if (results.affectedRows === 0) return res.status(404).send('Cliente no encontrado');
         res.send('Cliente eliminado exitosamente');
     });
 });

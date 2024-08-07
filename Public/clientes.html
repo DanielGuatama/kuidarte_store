@@ -20,25 +20,19 @@
         </div>
     </header>
     <div class="main-container">
+        <!-- Formulario de búsqueda de cliente -->
         <section>
-            <h2>Lista de Clientes</h2>
-            <table id="clientesTable">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Cédula/NIT</th>
-                        <th>Correo</th>
-                        <th>Teléfono</th>
-                        <th>Dirección</th>
-                        <th>Ciudad</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
+            <h2>Buscar Cliente</h2>
+            <form id="buscarClienteForm">
+                <label for="buscarId">ID:</label>
+                <input type="text" id="buscarId" name="id_cliente">
+                <label for="buscarCedula">Cédula/NIT:</label>
+                <input type="text" id="buscarCedula" name="cedula_nit">
+                <button type="submit">Buscar</button>
+            </form>
         </section>
-        <section>
+         <!-- Formulario de agregar cliente -->
+         <section>
             <h2>Agregar Cliente</h2>
             <form id="addClienteForm">
                 <label for="nombre">Nombre:</label>
@@ -56,28 +50,37 @@
                 <button type="submit">Agregar Cliente</button>
             </form>
         </section>
-    <!-- Formulario de edición de cliente -->
-    <section id="editSection" style="display:none;">
-        <h2>Editar Cliente</h2>
-        <form id="editClienteForm">
-            <input type="hidden" id="editIdCliente" name="id_cliente">
-            <label for="editNombre">Nombre:</label>
-            <input type="text" id="editNombre" name="nombre" required>
-            <label for="editCedulaNit">Cédula/NIT:</label>
-            <input type="text" id="editCedulaNit" name="cedula_nit" required>
-            <label for="editCorreo">Correo:</label>
-            <input type="email" id="editCorreo" name="correo" required>
-            <label for="editTelefono">Teléfono:</label>
-            <input type="text" id="editTelefono" name="telefono">
-            <label for="editDireccion">Dirección:</label>
-            <input type="text" id="editDireccion" name="direccion">
-            <label for="editCiudad">Ciudad:</label>
-            <input type="text" id="editCiudad" name="ciudad">
-            <button type="submit">Guardar Cambios</button>
-            <button type="button" id="cancelEdit">Cancelar</button>
-        </form>
-    </section>
-</div>
+        <!-- Mostrar cliente encontrado -->
+        <section id="clienteEncontradoSection" style="display:none;">
+            <h2>Cliente Encontrado</h2>
+            <div id="clienteEncontrado"></div>
+            <button id="editarClienteBtn">Editar</button>
+            <button id="eliminarClienteBtn">Eliminar</button>
+        </section>
+        <!-- Formulario de edición de cliente -->
+        <section id="editSection" style="display:none;">
+            <h2>Editar Cliente</h2>
+            <form id="editClienteForm">
+                <input type="hidden" id="editIdCliente" name="id_cliente">
+                <label for="editNombre">Nombre:</label>
+                <input type="text" id="editNombre" name="nombre" required>
+                <label for="editCedulaNit">Cédula/NIT:</label>
+                <input type="text" id="editCedulaNit" name="cedula_nit" required>
+                <label for="editCorreo">Correo:</label>
+                <input type="email" id="editCorreo" name="correo" required>
+                <label for="editTelefono">Teléfono:</label>
+                <input type="text" id="editTelefono" name="telefono">
+                <label for="editDireccion">Dirección:</label>
+                <input type="text" id="editDireccion" name="direccion">
+                <label for="editCiudad">Ciudad:</label>
+                <input type="text" id="editCiudad" name="ciudad">
+                <button type="submit">Guardar Cambios</button>
+                <button type="button" id="cancelEdit">Cancelar</button>
+            </form>
+        </section>
+                  
+    </div>
+    <footer>
 <footer>
     <p>&copy; 2024 Kuidarte Store. Todos los derechos reservados.</p>
 </footer>
