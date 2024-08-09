@@ -99,6 +99,7 @@ header {
     background-color: #f1f1f1;
     height: calc(100vh - 100px); /* Ajusta la altura restando header y footer */
     overflow-y: auto; /* Para permitir desplazamiento si el contenido es largo */
+    justify-content: space-between; /* Añadir espacio entre las secciones */
 }
 
 nav ul {
@@ -127,70 +128,86 @@ nav ul li a:hover {
     color: white;
 }
 
-#clientesTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-#clientesTable th, #clientesTable td {
-    border: 1px solid #ddd;
-    padding: 0.8rem;
-    text-align: left;
-}
-
-#clientesTable th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-#clientesTable tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#clientesTable tr:hover {
-    background-color: #ddd;
-}
-
-#buscarCedula {
-    padding: 0.5rem;
-    margin-right: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#buscarCliente {
-    padding: 0.5rem 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#buscarCliente:hover {
-    background-color: #45a049;
-}
-
-#editSection {
-    background-color: #f9f9f9;
-    padding: 1rem;
+/* Estilos para la sección de búsqueda de cliente */
+section {
+    background-color: white;
+    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Estilos para la sección de búsqueda de cliente */
+#buscarClienteForm {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#buscarClienteForm label,
+#buscarClienteForm input {
+    width: 100%;
+}
+
+#buscarClienteForm input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Estilos para la sección Cliente Encontrado */
+#clienteEncontradoSection {
+    width: 50%; /* Ocupa la mitad del espacio disponible a la izquierda */
+    margin-right: 20px; /* Añade espacio a la derecha de la sección */
+}
+
+#clienteEncontrado p {
+    margin: 5px 0;
+}
+
+/* Estilos para la sección Agregar Cliente */
+#addClienteForm {
+    width: 50%; /* Ocupa la mitad del espacio disponible a la derecha */
+    margin-right: 20px; /* Añade espacio a la izquierda de la sección */
+}
+
+#addClienteForm label,
+#addClienteForm input {
+    display: block;
+    width: 100%;
+}
+
+#addClienteForm input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Estilos para los botones */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0056b3; /* Azul */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #004494;
 }
 
 #cancelEdit {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 5px;
+    background-color: #ccc; /* Color gris para el botón cancelar */
+    color: black;
 }
 
 #cancelEdit:hover {
-    background-color: #d32f2f;
-} 
+    background-color: #bbb;
+}
 
 footer {
     padding: 10px 20px;
