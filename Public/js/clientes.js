@@ -13,18 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para buscar cliente
     buscarClienteForm.addEventListener('submit', event => {
-        event.preventDefault();
+        event.preventDefault(); // Previene el comportamiento predeterminado (opcional, para evitar la recarga de la página)
+       
         const formData = new FormData(buscarClienteForm);
         const id_cliente = formData.get('id_cliente');
-        const cedula_nit = formData.get('cedula_nit');
-
+        
         let query = '';
         if (id_cliente) {
             query = `/clientes/${id_cliente}`;
-        } else if (cedula_nit) {
-            query = `/clientes?cedula_nit=${cedula_nit}`;
+
         } else {
-            alert('Por favor, ingrese un ID o Cédula/NIT para buscar.');
+            alert('Por favor, ingrese un ID para buscar.');
             return;
         }
 
@@ -51,7 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 editarClienteBtn.onclick = () => editCliente(cliente.id_cliente);
                 eliminarClienteBtn.onclick = () => deleteCliente(cliente.id_cliente);
-            });
+            })
+            .catch(error => {
+                console.error('Error al buscar el cliente:', error);
+            })
+            .then(() => {
+                // Limpia el campo de búsqueda después de realizar la búsqueda
+                buscarClienteForm.reset();
+         });
+            
     });
 
         // Función para agregar cliente

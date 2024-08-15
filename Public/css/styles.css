@@ -1,3 +1,11 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 16px; /* 1 rem =10px */
+}
+
+
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -16,14 +24,14 @@ body.login-page {
 
 .login-container {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 2rem;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .login-container h1 {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .login-container form {
@@ -36,14 +44,14 @@ body.login-page {
 }
 
 .login-container input {
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: 1rem;
+    padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
 .login-container button {
-    padding: 10px;
+    padding: 1rem;
     border: none;
     background-color: #5588ef;
     color: white;
@@ -60,7 +68,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     background-color: #f6a8c1;
     border-bottom: 1px solid #ddd;
 }
@@ -71,7 +79,7 @@ header {
 }
 
 .logo {
-    height: 50px;
+    height: 5rem;
     margin-right: 15px;
 }
 
@@ -81,7 +89,7 @@ header {
 }
 
 #cerrarSesion {
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     background-color: #434446;
     color: white;
     border: none;
@@ -95,9 +103,9 @@ header {
 
 .main-container {
     display: flex;
-    padding: 20px;
+    padding: 2rem;
     background-color: #f1f1f1;
-    height: calc(100vh - 100px); /* Ajusta la altura restando header y footer */
+    height: calc(100vh - 10rem); /* Ajusta la altura restando header y footer */
     overflow-y: auto; /* Para permitir desplazamiento si el contenido es largo */
     justify-content: space-between; /* Añadir espacio entre las secciones */
 }
@@ -106,17 +114,17 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 200px; /* Fija el ancho del menú */
+    width: 20rem; /* Fija el ancho del menú */
 }
 
 nav ul li {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #333;
-    padding: 10px;
+    padding: 1rem;
     display: block;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -131,7 +139,7 @@ nav ul li a:hover {
 /* Estilos para la sección de búsqueda de cliente */
 section {
     background-color: white;
-    padding: 20px;
+    padding: 2rem;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
@@ -139,27 +147,27 @@ section {
 
 /* Estilos para la sección de búsqueda de cliente */
 #buscarClienteForm {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 #buscarClienteForm label,
 #buscarClienteForm input {
-    width: 100%;
+    width: 65%;
 }
 
 #buscarClienteForm input {
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 0.18rem;
 }
 
 /* Estilos para la sección Cliente Encontrado */
 #clienteEncontradoSection {
     width: 50%; /* Ocupa la mitad del espacio disponible a la izquierda */
-    margin-right: 20px; /* Añade espacio a la derecha de la sección */
+    margin-right: 2rem; /* Añade espacio a la derecha de la sección */
 }
 
 #clienteEncontrado p {
@@ -169,7 +177,7 @@ section {
 /* Estilos para la sección Agregar Cliente */
 #addClienteForm {
     width: 50%; /* Ocupa la mitad del espacio disponible a la derecha */
-    margin-right: 20px; /* Añade espacio a la izquierda de la sección */
+    margin-right: 2rem; /* Añade espacio a la izquierda de la sección */
 }
 
 #addClienteForm label,
@@ -179,17 +187,17 @@ section {
 }
 
 #addClienteForm input {
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
 /* Estilos para los botones */
 button {
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     border: none;
-    background-color: #0056b3; /* Azul */
+    background-color:  #434446; 
     color: white;
     border-radius: 5px;
     cursor: pointer;

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kuidarte Store - Clientes</title>
+    <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/clientes.js" defer></script>
 </head>
@@ -14,8 +15,8 @@
             <h1>Gestión de Clientes</h1>
         </div>
         <div class="header-right">
-            <form id="logoutForm" action="/logout" method="POST">
-                <button type="submit" id="cerrarSesion">Cerrar Sesión</button>
+            <form action="main.html">
+                <button type="submit">Regresar</button>
             </form>
         </div>
     </header>
@@ -25,9 +26,7 @@
             <h2>Buscar Cliente</h2>
             <form id="buscarClienteForm">
                 <label for="buscarId">ID:</label>
-                <input type="text" id="buscarId" name="id_cliente">
-                <label for="buscarCedula">Cédula/NIT:</label>
-                <input type="text" id="buscarCedula" name="cedula_nit">
+                <input type="text" placeholder="id cliente" id="buscarId" name="id_cliente">
                 <button type="submit">Buscar</button>
             </form>
         </section>
