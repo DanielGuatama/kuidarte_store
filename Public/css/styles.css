@@ -63,6 +63,15 @@ body.login-page {
     background-color: #0056b3;
 }
 
+/* Estilo para el mensaje de error en la página de inicio de sesión */
+#loginMessage {
+    color: red; /* El texto será rojo */
+    margin-top: 1rem; /* Añadir un espacio por encima del mensaje */
+    font-weight: bold; /* Hacer el texto del mensaje en negrita */
+    text-align: center; /* Centrar el mensaje */
+}
+
+
 /* Estilos para main.html (página principal) */
 header {
     display: flex;
@@ -138,10 +147,12 @@ nav ul li a:hover {
 
 /* Estilos para la sección de búsqueda de cliente */
 section {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: auto;
+    margin-left: 2rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     
 }
 
@@ -160,37 +171,71 @@ section {
 #buscarClienteForm input {
     padding: 1rem;
     margin-bottom: 1rem;
-    border: 1px solid #ccc;
+    border: 0.06rem solid #ccc;
     border-radius: 0.18rem;
 }
 
 /* Estilos para la sección Cliente Encontrado */
 #clienteEncontradoSection {
-    width: 50%; /* Ocupa la mitad del espacio disponible a la izquierda */
+    width: 70%; /* Ocupa la mitad del espacio disponible a la izquierda */
     margin-right: 2rem; /* Añade espacio a la derecha de la sección */
 }
 
 #clienteEncontrado p {
-    margin: 5px 0;
+    margin: 0.3px 0;
 }
 
 /* Estilos para la sección Agregar Cliente */
 #addClienteForm {
-    width: 50%; /* Ocupa la mitad del espacio disponible a la derecha */
-    margin-right: 2rem; /* Añade espacio a la izquierda de la sección */
+    width: 80%; /* Ocupa la mitad del espacio disponible a la derecha */
+    margin-right: 10rem; /* Añade espacio a la izquierda de la sección */
 }
 
 #addClienteForm label,
 #addClienteForm input {
     display: block;
+    flex-direction: column;
     width: 100%;
 }
 
 #addClienteForm input {
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     border: 1px solid #ccc;
     border-radius: 3px;
+}
+
+/* Estilos para la sección de edición de cliente */
+#editSection {
+    width: 50%; /* Ajusta el ancho según tus necesidades */
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el formulario de edición de cliente */
+#editClienteForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide el formulario en dos columnas */
+    gap: 0.5rem; /* Espacio entre las columnas y filas */
+}
+
+#editClienteForm label {
+    align-self: center; /* Centra las etiquetas verticalmente */
+    margin-bottom: 0.5rem;
+}
+
+#editClienteForm input {
+    width: 50%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#editClienteForm button {
+    padding: 1rem 2rem;
+    margin-right: 2rem;
 }
 
 /* Estilos para los botones */
@@ -201,24 +246,15 @@ button {
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 button:hover {
     background-color: #004494;
 }
 
-#cancelEdit {
-    background-color: #ccc; /* Color gris para el botón cancelar */
-    color: black;
-}
-
-#cancelEdit:hover {
-    background-color: #bbb;
-}
-
 footer {
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     text-align: center;
     background-color: #716f6f;
     border-top: 1px solid #ddd;

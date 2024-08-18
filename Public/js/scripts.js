@@ -22,8 +22,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     })
     .then(response => response.text())
     .then(data => {
+        const loginMessage = document.getElementById('loginMessage');
         if (data === 'Usuario o contraseña incorrectos') {
-            document.getElementById('loginMessage').innerText = data;
+            loginMessage.innerText = data;
+            loginMessage.style.color = 'red';  // Aseguramos que el texto sea rojo
+            loginMessage.style.display = 'block';  // Mostramos el mensaje de error
         } else {
             window.location.href = '/main.html';
         }
@@ -32,4 +35,3 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         console.error('Error:', error);
     });
 });
-

@@ -10,68 +10,76 @@ document.addEventListener('DOMContentLoaded', () => {
     const eliminarClienteBtn = document.getElementById('eliminarClienteBtn');
     
     
-
     // Función para buscar cliente
     buscarClienteForm.addEventListener('submit', event => {
-        event.preventDefault(); // Previene el comportamiento predeterminado (opcional, para evitar la recarga de la página)
-       
-        const formData = new FormData(buscarClienteForm);
-        const id_cliente = formData.get('id_cliente');
-        
-        let query = '';
-        if (id_cliente) {
-            query = `/clientes/${id_cliente}`;
+    event.preventDefault(); // Previene el comportamiento predeterminado
+    
+    const formData = new FormData(buscarClienteForm);
+    const id_cliente = formData.get('id_cliente');
+    
+    if (!id_cliente) {
+        alert('Por favor, ingrese un ID para buscar.');
+        return;
+    }
 
-        } else {
-            alert('Por favor, ingrese un ID para buscar.');
-            return;
-        }
+    const query = `/clientes/${id_cliente}`;
 
-        fetch(query)
-            .then(response => response.json())
-            .then(cliente => {
-                if (Array.isArray(cliente) && cliente.length > 0) {
-                    cliente = cliente[0]; // En caso de múltiples resultados, tomar el primero
-                }
-                if (!cliente || cliente.length === 0) {
+    fetch(query)
+        .then(response => {
+            if (!response.ok) {
+                // Manejo de errores HTTP
+                if (response.status === 404) {
                     alert('Cliente no encontrado.');
-                    return;
+                } else {
+                    alert('Ocurrió un error al buscar el cliente.');
                 }
-                clienteEncontradoDiv.innerHTML = `
-                    <p>ID: ${cliente.id_cliente}</p>
-                    <p>Nombre: ${cliente.nombre}</p>
-                    <p>Cédula/NIT: ${cliente.cedula_nit}</p>
-                    <p>Correo: ${cliente.correo}</p>
-                    <p>Teléfono: ${cliente.telefono || ''}</p>
-                    <p>Dirección: ${cliente.direccion || ''}</p>
-                    <p>Ciudad: ${cliente.ciudad || ''}</p>
-                `;
-                clienteEncontradoSection.style.display = 'block';
-                
-                editarClienteBtn.onclick = () => editCliente(cliente.id_cliente);
-                eliminarClienteBtn.onclick = () => deleteCliente(cliente.id_cliente);
-            })
-            .catch(error => {
-                console.error('Error al buscar el cliente:', error);
-            })
-            .then(() => {
-                // Limpia el campo de búsqueda después de realizar la búsqueda
-                buscarClienteForm.reset();
-         });
-            
+                throw new Error('Error al buscar cliente');
+            }
+            return response.json();
+        })
+        .then(cliente => {
+            // Verifica si se recibió un cliente
+            if (!cliente) {
+                alert('Cliente no encontrado.');
+                return;
+            }
+
+            // Muestra la información del cliente encontrado
+            clienteEncontradoDiv.innerHTML = `
+                <p>ID: ${cliente.id_cliente}</p>
+                <p>Nombre: ${cliente.nombre}</p>
+                <p>Cédula/NIT: ${cliente.cedula_nit}</p>
+                <p>Correo: ${cliente.correo}</p>
+                <p>Teléfono: ${cliente.telefono || ''}</p>
+                <p>Dirección: ${cliente.direccion || ''}</p>
+                <p>Ciudad: ${cliente.ciudad || ''}</p>
+            `;
+            clienteEncontradoSection.style.display = 'block';
+
+            // Asocia los botones de editar y eliminar con las funciones correspondientes
+            editarClienteBtn.onclick = () => editCliente(cliente.id_cliente);
+            eliminarClienteBtn.onclick = () => deleteCliente(cliente.id_cliente);
+        })
+        .catch(error => {
+            console.error('Error al buscar el cliente:', error);
+        })
+        .finally(() => {
+            // Limpia el campo de búsqueda después de realizar la búsqueda
+            buscarClienteForm.reset();
+        });
     });
 
-        // Función para agregar cliente
-        addClienteForm.addEventListener('submit', event => {
-            event.preventDefault();
-            const formData = new FormData(addClienteForm);
-            const data = {
-                nombre: formData.get('nombre'),
-                cedula_nit: formData.get('cedula_nit'),
-                correo: formData.get('correo'),
-                telefono: formData.get('telefono'),
-                direccion: formData.get('direccion'),
-                ciudad: formData.get('ciudad')
+    // Función para agregar cliente
+    addClienteForm.addEventListener('submit', event => {
+    event.preventDefault();
+        const formData = new FormData(addClienteForm);
+        const data = {
+            nombre: formData.get('nombre'),
+            cedula_nit: formData.get('cedula_nit'),
+            correo: formData.get('correo'),
+            telefono: formData.get('telefono'),
+            direccion: formData.get('direccion'),
+            ciudad: formData.get('ciudad')
             };
     
             fetch('/clientes', {

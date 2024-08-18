@@ -83,31 +83,22 @@ app.post('/clientes', (req, res) => {
     });
 });
 
-// Leer cliente por Cédula/NIT
-app.get('/clientes', (req, res) => {
-    const { cedula_nit } = req.query;
-    if (cedula_nit) {
-        const query = 'SELECT * FROM clientes WHERE cedula_nit = ?';
-        db.query(query, [cedula_nit], (err, results) => {
-            if (err) return res.status(500).send(err);
-            if (results.length === 0) return res.status(404).send('Cliente no encontrado');
-            res.json(results);
-        });
-    } else {
-        res.status(400).send('Debe proporcionar un ID o Cédula/NIT para buscar');
-    }
-});
 
 // Leer cliente por ID
 app.get('/clientes/:id', (req, res) => {
     const id = req.params.id;
+    if (id) {
     const query = 'SELECT * FROM clientes WHERE id_cliente = ?';
     db.query(query, [id], (err, result) => {
         if (err) return res.status(500).send(err);
         if (result.length === 0) return res.status(404).send('Cliente no encontrado');
-        res.json(result[0]);
+        res.json(result[0]);   
     });
-});
+    } 
+    else {
+    res.status(400).send('Debe proporcionar un ID');
+    } 
+    });
 
 
 // Actualizar cliente
