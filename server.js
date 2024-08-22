@@ -1,20 +1,18 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mysql = require('mysql');
-const path = require('path');
+// Variables declaradas
+const express = require('express'); // Framework para crear aplicaciones web
+const bodyParser = require('body-parser'); // Middleware para parsear cuerpos de solicitudes
+const mysql = require('mysql'); // Módulo para conectarse a MySQL
+const path = require('path'); // Módulo para manejar rutas de archivos
+const session = require('express-session'); // Middleware para manejar sesiones
 
-//configurar las rutas CRUD 
-const session = require('express-session');
-
-const app = express();
-//const app = express();
+const app = express(); // Inicializa la aplicación Express
 
 // Configuración de la base de datos
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'kuidarte_store'
+    host: 'localhost', // Host de la base de datos
+    user: 'root', // Usuario de la base de datos
+    password: '', // Contraseña de la base de datos
+    database: 'kuidarte_store' // Nombre de la base de datos
 });
 
 db.connect(err => {
