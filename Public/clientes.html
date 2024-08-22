@@ -9,6 +9,7 @@
     <script src="js/clientes.js" defer></script>
 </head>
 <body>
+    <!-- Encabezado de la página -->
     <header>
         <div class="header-left">
             <img src="img/logo.png" alt="Logo de Kuidarte Store" class="logo">
@@ -21,7 +22,7 @@
         </div>
     </header>
     <div class="main-container">
-        <!-- Formulario de búsqueda de cliente -->
+        <!-- Sección para buscar un cliente -->
         <section>
             <h2>Buscar Cliente</h2>
             <form id="buscarClienteForm">
@@ -30,14 +31,14 @@
                 <button type="submit">Buscar</button>
             </form>
         </section>
-        <!-- Mostrar cliente encontrado -->
+        <!-- Sección que muestra el cliente encontrado -->
         <section id="clienteEncontradoSection" style="display:none;">
             <h2>Cliente Encontrado</h2>
             <div id="clienteEncontrado"></div>
             <button id="editarClienteBtn">Editar</button>
             <button id="eliminarClienteBtn">Eliminar</button>
         </section>
-        <!-- Formulario de edición de cliente -->
+        <!-- Sección para editar un cliente -->
         <section id="editSection" style="display:none;">
             <h2>Editar Cliente</h2>
             <form id="editClienteForm">
@@ -58,7 +59,7 @@
                 <button type="submit">Guardar Cambios</button>
             </form>
         </section>
-                   <!-- Formulario de agregar cliente -->
+        <!-- Sección para agregar un nuevo cliente -->
         <section>
             <h2>Agregar Cliente</h2>
             <form id="addClienteForm">
@@ -78,9 +79,10 @@
             </form>
         </section>
     </div>
-<footer>
-    <p>&copy; 2024 Kuidarte Store. Todos los derechos reservados.</p>
-</footer>
-<script src="js/cerrarSesion.js"></script>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Kuidarte Store. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/cerrarSesion.js"></script>
 </body>
 </html>
