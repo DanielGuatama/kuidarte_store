@@ -11,7 +11,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #F5F5F5;
 }
 
 /* Estilos para el index.html (página de inicio de sesión) */
@@ -75,46 +75,51 @@ body.login-page {
 /* Estilos para main.html (página principal) */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #f6a8c1;
-    border-bottom: 1px solid #ddd;
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
+    justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal */
+    align-items: center; /* Alinea los elementos a lo largo del eje transversal */
+    padding: 1rem 2rem; /* Espaciado alrededor del contenido del header */
+    background-color: #e3aaaa; /* Color de fondo del header */
+    color: #fff; /* Color del texto en el header */
+    border-bottom: 1px solid #ddd; /* Borde inferior del header */
+    position: relative; /* Necesario para centrar los elementos dentro del header */
 }
 
 .logo {
-    height: 5rem;
-    margin-right: 15px;
+    height: 10rem; /* Altura del logo */
+    margin-right: 2rem; /* Espacio entre el logo y el texto */
+}
+
+.header-left {
+    display: flex; /* Usa flexbox para alinear los elementos internos */
+    align-items: center; /* Alinea verticalmente los elementos internos */
+    flex: 1; /* Permite que .header-left ocupe el espacio disponible */
+    justify-content: center; /* Centra horizontalmente los elementos internos */
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
+    display: flex; /* Usa flexbox para alinear el botón de cerrar sesión */
+    align-items: center; /* Alinea verticalmente el botón */
 }
 
 #cerrarSesion {
-    padding: 1rem 2rem;
-    background-color: #434446;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 1.5rem 3rem; /* Espaciado interno del botón */
+    background-color: #434446; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero al pasar sobre el botón */
 }
 
 #cerrarSesion:hover {
-    background-color: #434446;
+    background-color: #333; /* Color de fondo más oscuro al pasar el cursor */
 }
+
 
 .main-container {
     display: flex;
     padding: 2rem;
     background-color: #f1f1f1;
-    height: calc(100vh - 10rem); /* Ajusta la altura restando header y footer */
+    height: 75vh ; /* Ajusta la altura header y footer */
     overflow-y: auto; /* Para permitir desplazamiento si el contenido es largo */
     justify-content: space-between; /* Añadir espacio entre las secciones */
 }
@@ -127,7 +132,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 nav ul li a {
@@ -177,8 +182,13 @@ section {
 
 /* Estilos para la sección Cliente Encontrado */
 #clienteEncontradoSection {
-    width: 70%; /* Ocupa la mitad del espacio disponible a la izquierda */
-    margin-right: 2rem; /* Añade espacio a la derecha de la sección */
+    display: flex;
+    align-items: center;
+    width: 40%; /* Ocupa el 40% del ancho disponible */
+    background-color: #DFE1DE; /* Color de fondo de la sección */
+    margin-right: 2rem; /* Espacio a la derecha de la sección */
+    text-align: center; /* Centra el texto dentro de la sección */
+    padding: 2rem; /* Opcional: agrega un poco de espaciado interno para mejorar el diseño */
 }
 
 #clienteEncontrado p {
@@ -256,7 +266,9 @@ button:hover {
 footer {
     padding: 1rem 2rem;
     text-align: center;
-    background-color: #716f6f;
+    background-color: #B1B3B1;
+    color: #ffffff;
+    font-size: 1.5rem;
     border-top: 1px solid #ddd;
     position: fixed;
     width: 100%;
