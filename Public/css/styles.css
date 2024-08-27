@@ -5,7 +5,6 @@ body {
     font-size: 16px; /* 1 rem =10px */
 }
 
-
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -14,7 +13,7 @@ body {
     background-color: #F5F5F5;
 }
 
-/* Estilos para el index.html (página de inicio de sesión) */
+/* Estilos para el index.html */
 body.login-page {
     display: flex;
     justify-content: center;
@@ -23,6 +22,7 @@ body.login-page {
 }
 
 .login-container {
+    /* Contenedor de inicio de sesión */
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 5px;
@@ -53,7 +53,7 @@ body.login-page {
 .login-container button {
     padding: 1rem;
     border: none;
-    background-color:#7A7B7A;
+    background-color: #7A7B7A;
     color: white;
     border-radius: 3px;
     cursor: pointer;
@@ -63,72 +63,72 @@ body.login-page {
     background-color: #0056b3;
 }
 
-/* Estilo para el mensaje de error en la página de inicio de sesión */
+/* Estilo para el mensaje de error */
 #loginMessage {
-    color: red; /* El texto será rojo */
-    margin-top: 1rem; /* Añadir un espacio por encima del mensaje */
-    font-weight: bold; /* Hacer el texto del mensaje en negrita */
-    text-align: center; /* Centrar el mensaje */
+    color: red;
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: center;
 }
 
-
-/* Estilos para main.html (página principal) */
+/* Estilos para main.html */
 header {
+    /* Encabezado de la página */
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal */
-    align-items: center; /* Alinea los elementos a lo largo del eje transversal */
-    padding: 1rem 2rem; /* Espaciado alrededor del contenido del header */
-    background-color: #e3aaaa; /* Color de fondo del header */
-    color: #fff; /* Color del texto en el header */
-    border-bottom: 1px solid #ddd; /* Borde inferior del header */
-    position: relative; /* Necesario para centrar los elementos dentro del header */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #e3aaaa;
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: relative;
 }
 
 .logo {
-    height: 10rem; /* Altura del logo */
-    margin-right: 2rem; /* Espacio entre el logo y el texto */
+    height: 10rem;
+    margin-right: 2rem;
 }
 
 .header-left {
-    display: flex; /* Usa flexbox para alinear los elementos internos */
-    align-items: center; /* Alinea verticalmente los elementos internos */
-    flex: 1; /* Permite que .header-left ocupe el espacio disponible */
-    justify-content: center; /* Centra horizontalmente los elementos internos */
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
 }
 
 .header-right {
-    display: flex; /* Usa flexbox para alinear el botón de cerrar sesión */
-    align-items: center; /* Alinea verticalmente el botón */
+    display: flex;
+    align-items: center;
 }
 
 #cerrarSesion {
-    padding: 1.5rem 3rem; /* Espaciado interno del botón */
-    background-color: #434446; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    border: none; /* Sin borde */
-    border-radius: 0.5rem; /* Bordes redondeados */
-    cursor: pointer; /* Cursor de puntero al pasar sobre el botón */
+    /* Botón de cerrar sesión */
+    padding: 1.5rem 3rem;
+    background-color: #434446;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 #cerrarSesion:hover {
-    background-color: #333; /* Color de fondo más oscuro al pasar el cursor */
+    background-color: #333;
 }
-
 
 .main-container {
     display: flex;
     padding: 2rem;
     background-color: #f1f1f1;
-    height: 75vh ; /* Ajusta la altura header y footer */
-    overflow-y: auto; /* Para permitir desplazamiento si el contenido es largo */
-    justify-content: space-between; /* Añadir espacio entre las secciones */
+    height: 75vh;
+    overflow-y: auto;
+    justify-content: space-between;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 20rem; /* Fija el ancho del menú */
+    width: 20rem;
 }
 
 nav ul li {
@@ -158,10 +158,8 @@ section {
     margin-left: 2rem;
     border-radius: 0.3rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    
 }
 
-/* Estilos para la sección de búsqueda de cliente */
 #buscarClienteForm {
     display: inline-block;
     flex-direction: column;
@@ -184,11 +182,11 @@ section {
 #clienteEncontradoSection {
     display: flex;
     align-items: center;
-    width: 40%; /* Ocupa el 40% del ancho disponible */
-    background-color: #DFE1DE; /* Color de fondo de la sección */
-    margin-right: 2rem; /* Espacio a la derecha de la sección */
-    text-align: center; /* Centra el texto dentro de la sección */
-    padding: 2rem; /* Opcional: agrega un poco de espaciado interno para mejorar el diseño */
+    width: 40%;
+    background-color: #DFE1DE;
+    margin-right: 2rem;
+    text-align: center;
+    padding: 2rem;
 }
 
 #clienteEncontrado p {
@@ -197,8 +195,8 @@ section {
 
 /* Estilos para la sección Agregar Cliente */
 #addClienteForm {
-    width: 80%; /* Ocupa la mitad del espacio disponible a la derecha */
-    margin-right: 10rem; /* Añade espacio a la izquierda de la sección */
+    width: 80%;
+    margin-right: 10rem;
 }
 
 #addClienteForm label,
@@ -217,7 +215,7 @@ section {
 
 /* Estilos para la sección de edición de cliente */
 #editSection {
-    width: 50%; /* Ajusta el ancho según tus necesidades */
+    width: 50%;
     background-color: white;
     padding: 2rem;
     border-radius: 5px;
@@ -227,12 +225,12 @@ section {
 /* Estilos para el formulario de edición de cliente */
 #editClienteForm {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide el formulario en dos columnas */
-    gap: 0.5rem; /* Espacio entre las columnas y filas */
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
 }
 
 #editClienteForm label {
-    align-self: center; /* Centra las etiquetas verticalmente */
+    align-self: center;
     margin-bottom: 0.5rem;
 }
 
@@ -252,7 +250,7 @@ section {
 button {
     padding: 1rem 2rem;
     border: none;
-    background-color:  #434446; 
+    background-color: #434446;
     color: white;
     border-radius: 5px;
     cursor: pointer;
